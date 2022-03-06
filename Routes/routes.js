@@ -1,7 +1,7 @@
 const express = require('express')
 const routes = express.Router()
 
-const brazilStates = [
+const states = [
     {'id':'ac','name':'Acre'},
     {'id':'al','name':'Alagoas'},
     {'id':'ap','name':'Amapá'},
@@ -35,7 +35,8 @@ routes.get('/',(req,res)=>{
     res.json({
         'Olá':'Bem-vindo(a) a API de Estados Brasileiros.',
         'Atenção':'Para acessar os dados de um estado, digite a sua sigla na URL, indicando sua rota.',
-        'Exemplo': 'https://brazilstates.vercel.app/SG  --> sendo SG a sigla do estado a ser pesquisado',
+        'Exemplo': 'https://brazilstates.vercel.app/SG  --> sendo SG a sigla do estado a ser pesquisado.',
+        'Quer ter como resposta todos os estados? Acesse': 'https://brazilstates.vercel.app/all',
         'Criado por': {
             'Desenvolvedor':'Jean Carlos de Paula',
             'Github': 'https://github.com/jeancarlospaula'
@@ -46,9 +47,12 @@ routes.get('/',(req,res)=>{
 
 routes.get('/:stateID',(req,res)=>{
     const stateID = req.params.stateID.toLowerCase()
-    const stateInfo = brazilStates.find(p => p.id == stateID)
+    const stateInfo = states.find(p => p.id == stateID)
 
-    if(!stateInfo){
+    if(stateID === 'all'){
+        res.status(200).json({states})
+    }
+    else if(!stateInfo){
         res.status(400).json({
             'erro':`Nenhum estado do Brasil possui \'${req.params.stateID}\' como sua sigla`,
         })
