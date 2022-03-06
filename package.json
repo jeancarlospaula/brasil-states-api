@@ -1,5 +1,25 @@
 {
   "dependencies": {
     "express": "^4.17.3"
-  }
+  },
+  "name": "brazil-states-api",
+  "description": "API to access Brazilian states with their acronyms",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeancarlospaula/brazil-states-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeancarlospaula/brazil-states-api/issues"
+  },
+  "homepage": "https://github.com/jeancarlospaula/brazil-states-api#readme"
 }
