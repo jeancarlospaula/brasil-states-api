@@ -35,8 +35,13 @@ routes.get('/',(req,res)=>{
     res.json({
         'Olá':'Bem-vindo(a) a API de Estados Brasileiros.',
         'Atenção':'Para acessar os dados de um estado, digite a sua sigla na URL, indicando sua rota.',
-        'Exemplo': 'brazil-states.heroku.com/XX  --> sendo XX a sigla do estado a ser pesquisado'
-    })
+        'Exemplo': 'https://brazil-states.herokuapp.com/SG  --> sendo SG a sigla do estado a ser pesquisado',
+        'Criado por': {
+            'Desenvolvedor':'Jean Carlos de Paula',
+            'Github': 'https://github.com/jeancarlospaula'
+        }
+    }
+    )
 })
 
 routes.get('/:stateID',(req,res)=>{
